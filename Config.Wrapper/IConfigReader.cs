@@ -1,6 +1,6 @@
 namespace Config.Wrapper;
 
-public interface IConfigWrapper
+public interface IConfigReader
 {
     TData? GetConfigSection<TData>(string sectionName);
 }
