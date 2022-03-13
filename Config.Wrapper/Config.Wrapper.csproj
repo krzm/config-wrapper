@@ -12,24 +12,5 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
-	<!-- <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" /> -->
-	<!-- <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.23" /> -->
-    <!-- <PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" /> -->
   </ItemGroup>
-
-  <!--Debug refs-->
-	<ItemGroup>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
-		</Reference>
-	</ItemGroup> 
-
-	<!--Realese refs-->
-  	<!--<ItemGroup>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
-		</Reference>
-	</ItemGroup>-->
 </Project>

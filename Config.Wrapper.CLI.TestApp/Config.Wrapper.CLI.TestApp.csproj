@@ -10,18 +10,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Config.Wrapper\Config.Wrapper.csproj" />
   </ItemGroup>
-
-  <!--Debug refs-->
-	<ItemGroup>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\cli-helper\CLIHelper\bin\Debug\net6.0\CLIHelper.dll</HintPath>
-		</Reference>
-	</ItemGroup> 
-
-	<!--Realese refs-->
-  	<!--<ItemGroup>
-		<Reference Include="CLIHelper">
-			<HintPath>..\..\..\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
-		</Reference>
-	</ItemGroup>-->
 </Project>
