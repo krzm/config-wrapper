@@ -24,7 +24,7 @@ public abstract class ConfigFileTests
     {
         return SetBuilder(
             SetDirSysMock(
-                "C:\\kmazanek@gmail.com\\Code\\config\\Config.Wrapper.Tests\\ConfigFile\\NoFile")
+                "C:\\kmazanek@gmail.com\\Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile\\NoFile")
                     .Object);
     }
 
@@ -32,7 +32,7 @@ public abstract class ConfigFileTests
     {
         return SetBuilder(
             SetDirSysMock(
-                AssertFile("C:\\kmazanek@gmail.com\\Code\\config\\Config.Wrapper.Tests\\ConfigFile\\Ok"))
+                AssertFile("C:\\kmazanek@gmail.com\\Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile\\Ok"))
                     .Object);
     }
 
@@ -40,7 +40,7 @@ public abstract class ConfigFileTests
     {
         return SetBuilder(
             SetDirSysMock(
-                AssertFile("C:\\kmazanek@gmail.com\\Code\\config\\Config.Wrapper.Tests\\ConfigFile\\NotOk"))
+                AssertFile("C:\\kmazanek@gmail.com\\Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile\\NotOk"))
                     .Object);
     }
 
