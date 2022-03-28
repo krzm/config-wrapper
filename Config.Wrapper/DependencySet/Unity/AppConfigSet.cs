@@ -2,7 +2,7 @@ using DIHelper.Unity;
 using Microsoft.Extensions.Configuration;
 using Unity;
 
-namespace Config.Wrapper;
+namespace Config.Wrapper.Unity;
 
 public class AppConfigSet 
     : UnityDependencySet
