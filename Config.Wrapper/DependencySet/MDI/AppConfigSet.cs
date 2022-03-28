@@ -1,25 +1,31 @@
-using DIHelper.Unity;
+using DIHelper.MicrosoftDI;
 using Microsoft.Extensions.Configuration;
-using Unity;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Config.Wrapper.MDI;
 
 public class AppConfigSet 
-    : UnityDependencySet
+    : MDIDependencySet
 {
     public AppConfigSet(
-        IUnityContainer container) 
+        IServiceCollection container) 
         : base(container)
     {
     }
 
     public override void Register()
     {
-        Container.RegisterSingleton<IConfigurationBuilder, ConfigurationBuilder>();
-        Container.RegisterSingleton<IDirectorySys, DirectorySys>();
-        Container.RegisterSingleton<IConfigBuilder, ConfigBuilder>();
-        Container.RegisterInstance<IConfiguration>(
-            Container.Resolve<IConfigBuilder>().BuildConfig());
-        Container.RegisterSingleton<IConfigReader, ConfigReader>();
+        Container
+            .AddSingleton<IConfigurationBuilder, ConfigurationBuilder>()
+            .AddSingleton<IDirectorySys, DirectorySys>()
+            .AddSingleton<IConfigBuilder, ConfigBuilder>();
+        var configBuilder = Container
+			.BuildServiceProvider()
+			.GetService<IConfigBuilder>();
+		ArgumentNullException.ThrowIfNull(configBuilder);
+        Container
+            .AddSingleton<IConfiguration>(
+                configBuilder.BuildConfig())
+            .AddSingleton<IConfigReader, ConfigReader>();
     }
 }
