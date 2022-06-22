@@ -1,5 +1,4 @@
 using System;
-using CLIHelper;
 using Microsoft.Extensions.Configuration;
 using Xunit;
 
