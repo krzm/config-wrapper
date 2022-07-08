@@ -7,6 +7,13 @@ namespace Config.Wrapper.Tests;
 
 public abstract class ConfigFileTests
 {
+    private const string ConfigFile = "appsettings.json";
+    private const string RootPath = "C:\\kmazanek.gmail.com";
+    private const string TestFolderPath = "Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile";
+    private const string NoFilePath = $"{RootPath}\\{TestFolderPath}\\NoFile";
+    private const string OkFilePath = $"{RootPath}\\{TestFolderPath}\\Ok";
+    private const string NotOkFilePath = $"{RootPath}\\{TestFolderPath}\\NotOk";
+
     protected Mock<IDirectorySys> SetDirSysMock(string path)
     {
         var dsysMock = new Mock<IDirectorySys>();
@@ -16,7 +23,7 @@ public abstract class ConfigFileTests
 
     protected string AssertFile(string path)
     {
-        Assert.True(File.Exists(Path.Combine(path, "appsettings.json")));
+        Assert.True(File.Exists(Path.Combine(path, ConfigFile)));
         return path;
     }
 
@@ -24,7 +31,7 @@ public abstract class ConfigFileTests
     {
         return SetBuilder(
             SetDirSysMock(
-                "C:\\kmazanek@gmail.com\\Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile\\NoFile")
+                NoFilePath)
                     .Object);
     }
 
@@ -32,7 +39,7 @@ public abstract class ConfigFileTests
     {
         return SetBuilder(
             SetDirSysMock(
-                AssertFile("C:\\kmazanek@gmail.com\\Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile\\Ok"))
+                AssertFile(OkFilePath))
                     .Object);
     }
 
@@ -40,7 +47,7 @@ public abstract class ConfigFileTests
     {
         return SetBuilder(
             SetDirSysMock(
-                AssertFile("C:\\kmazanek@gmail.com\\Code\\config-wrapper\\Config.Wrapper.Tests\\ConfigFile\\NotOk"))
+                AssertFile(NotOkFilePath))
                     .Object);
     }
 
